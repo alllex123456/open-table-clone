@@ -3,6 +3,10 @@ import React from 'react';
 import Menu from '../components/Menu';
 import RestaurantNavBar from '../components/RestaurantNavBar';
 
+export const metadata = {
+  title: 'Restaurant | Menu | OpenTable',
+};
+
 const RestaurantMenuPage = () => {
   return (
     <>
