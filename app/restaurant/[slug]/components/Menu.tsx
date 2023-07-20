@@ -1,7 +1,8 @@
 import React from 'react';
 import MenuCard from './MenuCard';
+import { Item } from '@prisma/client';
 
-const Menu = () => {
+const Menu = ({ menu }: { menu: Item[] }) => {
   return (
     <main className="bg-white mt-5">
       <div>
@@ -10,7 +11,9 @@ const Menu = () => {
         </div>
 
         <div className="flex flex-wrap justify-between">
-          <MenuCard key="0" />
+          {menu.map((item, index) => (
+            <MenuCard key={index} item={item} />
+          ))}
         </div>
       </div>
     </main>

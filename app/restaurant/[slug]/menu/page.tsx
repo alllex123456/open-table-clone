@@ -24,12 +24,12 @@ export const metadata = {
 };
 
 const RestaurantMenuPage = async ({ params }: { params: { slug: string } }) => {
-  // const menu = await fetchRestaurantMenu(params.slug);
+  const menu = await fetchRestaurantMenu(params.slug);
   return (
     <>
       <div className="bg-white w-[100%] rounded p-3 shadow">
         <RestaurantNavBar slug={params.slug} />
-        <Menu />
+        <Menu menu={menu} />
       </div>
     </>
   );
