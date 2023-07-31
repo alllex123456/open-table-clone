@@ -89,13 +89,13 @@ model User {
 model Booking {
   id                Int                @id @default(autoincrement())
   booking_time      DateTime
-  number_of_people  String
+  number_of_people  Int
   booker_email      String
   booker_phone      String
   booker_first_name String
   booker_last_name  String
-  booker_occasion   String
-  booker_request    String
+  booker_occasion   String?
+  booker_request    String?
   restaurant_id     Int
   restaurant        Restaurant         @relation(fields: [restaurant_id], references: [id])
   createdAt         DateTime           @default(now())
