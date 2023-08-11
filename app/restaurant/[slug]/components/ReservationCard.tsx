@@ -124,15 +124,14 @@ const ReservationCard = ({
         <div className="mt-4">
           <p className="text-reg">Select a time</p>
           <div className="flex flex-wrap mt-2">
-            {data.map((time) => {
+            {data.map((time, index) => {
               return time.available ? (
                 <Link
+                  key={index}
                   href={`/reserve/${slug}?date=${day}T${time.time}&partySize=${partySize}`}
                   className="bg-red-600 cursor-pointer p-2 w-24 text-center text-white mb-3 rounded mr-3"
                 >
-                  <p className="text-sm font-bold">
-                    {convertToDisplayTime(time.time)}
-                  </p>
+                  <p className="text-sm font-bold">{time.time.slice(0, 5)}</p>
                 </Link>
               ) : (
                 <p className="bg-gray-300 p-2 w-24 mb-3 rounded mr-3"></p>
