@@ -9,8 +9,8 @@ const Reviews = ({ reviews }: { reviews: Review[] }) => {
         What {reviews.length} people are saying
       </h1>
       <div>
-        {reviews.map((review, index) => (
-          <ReviewCard key={index} review={review} />
+        {reviews.map((review, i) => (
+          <ReviewCard key={i} review={review} />
         ))}
       </div>
     </div>
