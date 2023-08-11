@@ -71,8 +71,11 @@ const ReservationCard = ({
           value={partySize}
           onChange={(e) => setPartySize(e.target.value)}
         >
-          {partySizeArray.map((size) => (
-            <option value={size.value}> {size.label}</option>
+          {partySizeArray.map((size, index) => (
+            <option key={index} value={size.value}>
+              {' '}
+              {size.label}
+            </option>
           ))}
         </select>
       </div>
@@ -96,8 +99,10 @@ const ReservationCard = ({
             value={time}
             onChange={(e) => setTime(e.target.value)}
           >
-            {filterTimeByRestaurantOpenWindow().map((time) => (
-              <option value={time.time}>{time.displayTime}</option>
+            {filterTimeByRestaurantOpenWindow().map((time, index) => (
+              <option key={index} value={time.time}>
+                {time.displayTime}
+              </option>
             ))}
           </select>
         </div>
